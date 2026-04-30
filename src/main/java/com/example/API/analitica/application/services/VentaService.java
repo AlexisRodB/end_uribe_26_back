@@ -15,7 +15,7 @@ public class VentaService {
     @Autowired
     private EmpleadoRepository empleadoRepository;
     @Autowired
-    private UsuarioRepository usuarioRepository; // Añadimos esto
+    private UsuarioRepository usuarioRepository;
 
     public Map<String, Object> obtenerDatosDashboard() {
         List<Venta> ventas = ventaRepository.findAll();
@@ -29,7 +29,7 @@ public class VentaService {
 
         data.put("ingresosTotales", ingresos);
         data.put("totalEmpleados", empleadoRepository.count());
-        data.put("totalUsuarios", usuarioRepository.count()); // Nueva línea para el dashboard
+        data.put("totalUsuarios", usuarioRepository.count());
 
         return data;
     }
